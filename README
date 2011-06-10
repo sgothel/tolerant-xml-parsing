@@ -1,0 +1,12 @@
+
+Enables tolerant XML parsing, surrently for the suite's test results (JUnit, ..). 
+
+Tolerated XML errors: 
+    - Content is not allowed in trailing section
+        This one is caused by ant/junit test results, ie a trailing character '>' in the end 
+        of the test result XML file. Since the test itself is completed, we suppress a fatal error.
+
+Build agains JENKINS 1.416-SNAPSHOT 
+    git repo: git://github.com/jenkinsci/jenkins.git 
+    git branch: master
+
