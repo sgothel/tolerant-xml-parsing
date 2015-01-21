@@ -116,16 +116,16 @@ public class TolerantXMLErrorHandler implements ErrorHandler {
 
     public void fatalError(SAXParseException exception) throws SAXException {
         if(exceptionMessageEquals(exception, SAXException.class, msgContentIllegalInTrailingMisc)) {
-            printCatched("fatalError(SAXException "+msgContentIllegalInTrailingMisc+")", exception);
+            printCaught("fatalError(SAXException "+msgContentIllegalInTrailingMisc+")", exception);
             return; // keep going ..
         }
         System.err.println("FatalError: " + exception.getMessage());
         throw exception;
     }
 
-    static void printCatched(String header, Exception ex) {
+    static void printCaught(String header, Exception ex) {
         LOGGER.severe("************************************************");
-        LOGGER.severe("Catched: " + header);
+        LOGGER.severe("Caught: " + header);
         LOGGER.severe("------------------------------------------------");
         LOGGER.log(Level.SEVERE, "SAXTrace", ex);
         LOGGER.severe("************************************************");
